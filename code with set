@@ -1,0 +1,16 @@
+function findMissingNumbers(arr) {
+  let n = arr.length;
+  let set = new Set(arr);
+  
+  for (let i = 1; i <= n; i++) {
+    if (!set.has(i)) {
+      arr.push(i);
+    }
+  }
+  
+  return arr.slice(n);
+}
+
+let arr = [4, 3, 2, 7, 8, 2, 3, 1];
+let missingNumbers = findMissingNumbers(arr);
+console.log(missingNumbers); // outputs [5, 6]
